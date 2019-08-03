@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+<html>
+<head>
+    <title>Feedback page</title>
+</head>
+{% block content %}
+   {% if product %}
+<h1 class="text-center">Product Details Here</h1>
+<table class="table text-center table-striped table-bordered">
+    <thead>
+    <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Product class</th>
+        <th>Product Color</th>
+        <th>Product Cost</th>
+    </tr>
+    </thead>
+    {% for i in product %}
+        <tbody>
+        <tr>
+            <td>{{ i.product_id }}</td>
+            <td>{{ i.product_name }}</td>
+            <td>{{ i.product_class }}</td>
+            <td>{{ i.product_color }}</td>
+            <td>{{ i.product_cost}}</td>
+        </tr>
+        </tbody>
+    {% endfor %}
+</table>
+{% else %}
+<h2>Data Not Availabe</h2>
+{% endif %}
+{% endblock %}
+</html>

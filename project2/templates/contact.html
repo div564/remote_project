@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+<html>
+<head>
+    <title>Contact page</title>
+</head>
+{% block content %}
+   <div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h2 class="text-center">Insert Your Data</h2>
+            <form method="POST">
+                {% csrf_token %}
+                {{ iform }}
+                <center>
+                <input type="submit" value="Insert" class="btn btn-success">
+                <input type="reset" value="Clear" class="btn btn-danger">
+                </center>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+</html>
